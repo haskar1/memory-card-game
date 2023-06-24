@@ -5,9 +5,41 @@ import { useEffect, useState } from "react";
 export default function Game() {
   const [cards, setCards] = useState(initialCards);
   const [shuffledPokemonNames, setShuffledPokemonNames] = useState(['blastoise', 'snorlax', 'squirtle', 'charmander', 'jigglypuff', 'ditto', 'pikachu', 'eevee', 'garchomp', 'gyarados', 'bulbasaur', 'mewtwo']);
+  const [currentScore, setCurrentScore] = useState(0);
+  const [bestScore, setBestScore] = useState(0);
 
-  function handleClick() {
+  function handleClick(e) {
+    const pokemonName = e.target.id;
+    if (cards[pokemonName].clicked) {
+      currentScore > bestScore && setBestScore(currentScore);
+      setCurrentScore(0);
+      resetCards();
+    } 
+    else {
+      setCards({
+        ...cards,
+        [pokemonName]: {
+          ...cards[pokemonName],
+          clicked: true
+        }
+      })
+      setCurrentScore(currentScore + 1);
+    }
     shuffleCards();
+  }
+
+  function resetCards() {
+    for (let i = 0; i < shuffledPokemonNames.length; i++) {
+      setCards(prevCards => {
+        return {
+          ...prevCards,
+          [shuffledPokemonNames[i]]: {
+            ...cards[shuffledPokemonNames[i]],
+            clicked: false
+          }
+        }
+      });
+    }
   }
 
   function shuffleCards() {
@@ -48,7 +80,10 @@ export default function Game() {
 
   return (
     <>
-      <Scores />
+      <Scores 
+        currentScore={currentScore}
+        bestScore={bestScore}  
+      />
       <Board 
         cards={cards} 
         setCards={setCards} 
