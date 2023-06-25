@@ -79,7 +79,7 @@ export default function Game() {
   }, []);
 
   return (
-    <>
+    <div className="game">
       <Scores 
         currentScore={currentScore}
         bestScore={bestScore}  
@@ -90,7 +90,7 @@ export default function Game() {
         shuffledPokemonNames={shuffledPokemonNames} 
         onClick={handleClick} 
       />
-    </>
+    </div>
   )
 }
 
