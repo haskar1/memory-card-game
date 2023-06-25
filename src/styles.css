@@ -30,6 +30,7 @@ body {
   text-rendering: optimizeSpeed;
   line-height: 1.5;
   font-size: 0.9rem;
+  text-wrap: balance;
 }
 
 /* A elements that don't have a class get default styles */
@@ -77,11 +78,25 @@ select {
 :root {
   font-family: Arial, Helvetica, sans-serif;
   --primary-color: rgb(238, 238, 238);
-  --secondary-color: whitesmoke;
-  --dark-blue: rgb(20, 62, 114);
-  --btn-primary: rgb(51, 51 ,51);
+  --black-color: rgb(56, 56, 56);
+
+  --fs-200: clamp(1.13rem, calc(1.08rem + 0.22vw), 1.25rem);
+  --fs-300: clamp(1.35rem, calc(1.28rem + 0.37vw), 1.56rem);
+  --fs-400: clamp(1.62rem, calc(1.50rem + 0.58vw), 1.95rem);
+  --fs-500: clamp(1.94rem, calc(1.77rem + 0.87vw), 2.44rem);
 }
 
+@font-face {
+  font-family: "PokemonSolid";
+  src: local("PokemonSolid"), url("./fonts/Pokemon-Solid.ttf") format("truetype");
+  font-weight: bold;
+}
+
+.ff-pokemon-solid {
+  font-family: 'PokemonSolid';
+  letter-spacing: 0.2rem;
+}
+ 
 .bold {
   font-weight: 700;
 }
@@ -103,6 +118,55 @@ button:hover {
   white-space: nowrap;
 }
 
+
+
+/***************
+     HEADER
+***************/
+
+header {
+  background-color: rgb(239, 14, 61);
+}
+
+.logo-img {
+  width: min(100%, 700px);
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.logo-instructions {
+  font-size: var(--fs-300);
+  color: rgb(255, 222, 34);
+  text-align: center;
+  padding: 0 1rem 2rem;
+}
+
+.logo-black-line {
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--black-color);
+}
+
+.logo-big-circle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: var(--primary-color);
+  border: 6px solid var(--black-color);
+}
+
+.logo-small-circle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: var(--primary-color);
+  border: 4px solid var(--black-color);
+}
 
 
 /***************
@@ -155,7 +219,7 @@ button:hover {
 ***************/
 
 .scores {
-  font-size: 1.5rem;
+  font-size: var(--fs-300);
   margin: 1.5rem auto;
   text-align: center;
   max-width: 725px;
