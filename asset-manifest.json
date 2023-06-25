@@ -1,14 +1,17 @@
 {
   "files": {
-    "main.css": "/memory-card-game/static/css/main.d7e5c465.css",
-    "main.js": "/memory-card-game/static/js/main.6d28631c.js",
+    "main.css": "/memory-card-game/static/css/main.bb855423.css",
+    "main.js": "/memory-card-game/static/js/main.69dcac22.js",
     "static/media/loading.gif": "/memory-card-game/static/media/loading.b9ce259759469ec35edb.gif",
+    "static/media/Pokemon-Hollow.ttf": "/memory-card-game/static/media/Pokemon-Hollow.47f77ce9939c5330492b.ttf",
+    "static/media/Pokemon-Solid.ttf": "/memory-card-game/static/media/Pokemon-Solid.5d60be1f7ff5fcc21fc1.ttf",
+    "static/media/logo.png": "/memory-card-game/static/media/logo.70706317976000c09e6c.png",
     "index.html": "/memory-card-game/index.html",
-    "main.d7e5c465.css.map": "/memory-card-game/static/css/main.d7e5c465.css.map",
-    "main.6d28631c.js.map": "/memory-card-game/static/js/main.6d28631c.js.map"
+    "main.bb855423.css.map": "/memory-card-game/static/css/main.bb855423.css.map",
+    "main.69dcac22.js.map": "/memory-card-game/static/js/main.69dcac22.js.map"
   },
   "entrypoints": [
-    "static/css/main.d7e5c465.css",
-    "static/js/main.6d28631c.js"
+    "static/css/main.bb855423.css",
+    "static/js/main.69dcac22.js"
   ]
 }
